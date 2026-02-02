@@ -1,0 +1,177 @@
+.hud-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    /* Hero has 8vw padding. We use the same for Horizontal Alignment */
+    padding: 3rem 8vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.hud-corner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    letter-spacing: 0.05em;
+    z-index: 2;
+}
+
+/* Aligned Text Blocks */
+.hud-line-group {
+    display: flex;
+    flex-direction: column;
+    /* Stacked for "Based In..." */
+    align-items: flex-start;
+    gap: 0.2rem;
+}
+
+/* Positioning - Perfectly aligned with the Padding Box */
+.hud-tl {
+    top: 3rem;
+    left: 8vw;
+}
+
+.hud-tr {
+    top: 3rem;
+    right: 8vw;
+}
+
+.hud-bl {
+    bottom: 3rem;
+    left: 8vw;
+}
+
+.hud-br {
+    bottom: 3rem;
+    right: 8vw;
+}
+
+.hud-text {
+    font-weight: 500;
+}
+
+.hud-label {
+    opacity: 0.5;
+    font-size: 0.65rem;
+}
+
+/* Status Indicator Pulse */
+.hud-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.hud-indicator.active {
+    background-color: var(--text-accent);
+    box-shadow: 0 0 8px var(--text-accent);
+    animation: hudPulse 2s infinite;
+}
+
+@keyframes hudPulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Distinct Frame Lines - Calculated to bracket the content */
+.hud-line {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Top/Bottom Lines: Inset slightly from the corners to create "Brackets" */
+.line-top {
+    top: 2rem;
+    left: 8vw;
+    right: 8vw;
+    height: 1px;
+}
+
+.line-bottom {
+    bottom: 2rem;
+    left: 8vw;
+    right: 8vw;
+    height: 1px;
+}
+
+/* Left/Right Lines: Spanning distinct vertical space */
+.line-left {
+    top: 3rem;
+    bottom: 3rem;
+    left: 6vw;
+    width: 1px;
+    opacity: 0.5;
+}
+
+.line-right {
+    top: 3rem;
+    bottom: 3rem;
+    right: 6vw;
+    width: 1px;
+    opacity: 0.5;
+}
+
+/* Note: Side lines are wider (6vw) to frame the content (8vw) */
+
+@media (max-width: 900px) {
+    .hud-overlay {
+        padding: 1.5rem 6vw;
+    }
+
+    .hud-tl {
+        top: 1.5rem;
+        left: 6vw;
+    }
+
+    .hud-tr {
+        top: 1.5rem;
+        right: 6vw;
+    }
+
+    .hud-bl {
+        bottom: 1.5rem;
+        left: 6vw;
+    }
+
+    .hud-br {
+        bottom: 1.5rem;
+        right: 6vw;
+    }
+
+    .line-top {
+        top: 1rem;
+        left: 4vw;
+        right: 4vw;
+    }
+
+    .line-bottom {
+        bottom: 1rem;
+        left: 4vw;
+        right: 4vw;
+    }
+
+    .line-left,
+    .line-right {
+        display: none;
+    }
+}

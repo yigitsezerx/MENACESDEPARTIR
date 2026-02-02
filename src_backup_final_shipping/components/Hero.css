@@ -1,0 +1,251 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Left Content */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8vw;
+    /* Aligned with HUD text (8vw), inside the Frame Lines (6vw) */
+    z-index: 10;
+    max-width: 900px;
+    height: 100%;
+    /* Full height to allow vertical centering */
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    /* Increased size for visibility */
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.04em;
+}
+
+.text-highlight {
+    color: var(--text-secondary);
+    /* Muted contrast based on reference */
+    font-weight: 400;
+    /* Contrast weight */
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Button Base */
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    /* Real rounded corners */
+    font-family: var(--font-mono);
+    /* Technical Mono Font */
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    /* Engineering convention */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Primary: Signal Button */
+.btn-primary {
+    background: var(--text-primary);
+    /* White block */
+    color: var(--bg-primary);
+    /* Black text */
+    border: 1px solid var(--text-primary);
+}
+
+.btn-primary:hover {
+    background: var(--text-accent);
+    /* Tech Orange Action */
+    border-color: var(--text-accent);
+    color: #fff;
+    /* White text on orange */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.25);
+    /* Orange Glow */
+}
+
+/* Secondary: Ghost/Wireframe */
+.btn-secondary {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Subtle wireframe */
+}
+
+.btn-secondary:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    /* Lights up white */
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.btn-arrow {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover .btn-arrow {
+    transform: translateX(4px);
+    /* Arrow slides out */
+}
+
+
+
+.brand-logo {
+    height: 48px;
+    /* Larger for single impact */
+    width: auto;
+    object-fit: contain;
+    /* Soft Tint: Preserves details/luminance while pushing color to Corroded Orange */
+    filter: grayscale(100%) sepia(100%) hue-rotate(-30deg) saturate(400%) contrast(0.9);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+    filter: none;
+    /* Reveal original color on hover */
+    opacity: 1;
+}
+
+/* Previous Avatar Clean up (Optional, but safe to keep styles or remove) */
+
+/* Technical Log (Social Proof Redesign) */
+.hero-footer-log {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: none;
+    /* Removed structural divider */
+    width: auto;
+    /* Allow it to breathe */
+    justify-content: flex-start;
+}
+
+.log-label {
+    font-family: var(--font-heading);
+    /* Revert to standard font or keep mono? Let's keep it clean sans */
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    text-transform: none;
+    /* Natural reading */
+}
+
+.log-items {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Logos use the existing .brand-logo class, but we can refine specific margins if needed */
+
+/* Right Visual */
+.hero-visual-container {
+    position: relative;
+    /* background: var(--bg-primary); */
+    /* Transparent to let grid integrate */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 80%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 400px;
+    }
+
+    .hero-content {
+        padding: var(--spacing-lg) 6vw;
+    }
+}/* ASCII Raw Button */
+.btn-ascii {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.btn-ascii::before {
+    content: '[ ';
+    color: var(--text-secondary);
+    opacity: 0.5;
+    transition: all 0.2s ease;
+}
+
+.btn-ascii::after {
+    content: ' ]';
+    color: var(--text-secondary);
+    opacity: 0.5;
+    transition: all 0.2s ease;
+}
+
+.btn-ascii:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.btn-ascii:hover::before,
+.btn-ascii:hover::after {
+    color: var(--text-accent);
+    opacity: 1;
+    text-shadow: 0 0 10px var(--text-accent);
+}

@@ -1,0 +1,40 @@
+:root {
+  /* Colors - Liquid Glass (Dark Mode Only) */
+  --bg-primary: #0a0a0b;
+  /* Deep Black/Blue */
+  --bg-light: #F2F2F7;
+  /* Preserved for potential accents */
+
+  --text-primary: #F2F2F7;
+  /* High contrast white */
+  --text-secondary: rgba(242, 242, 247, 0.7);
+  --text-accent: #FF6B00;
+  /* Corroded Orange */
+
+  /* Liquid Glass Tokens */
+  --glass-bg: rgba(20, 20, 22, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: none;
+  --glass-blur: blur(24px);
+
+  /* Typography */
+  --font-heading: 'IBM Plex Sans', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Spacing & Shapes */
+  --radius-sm: 12px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --radius-xl: 60px;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Animations */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
