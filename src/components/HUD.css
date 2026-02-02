@@ -133,7 +133,67 @@
 
 /* Note: Side lines are wider (6vw) to frame the content (8vw) */
 
-@media (max-width: 900px) {
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Tablet: 768px - 900px */
+@media (max-width: 900px) and (min-width: 768px) {
+    .hud-overlay {
+        padding: 2rem 6vw;
+    }
+
+    .hud-tl {
+        top: 2rem;
+        left: 6vw;
+    }
+
+    .hud-tr {
+        top: 2rem;
+        right: 6vw;
+    }
+
+    .hud-bl {
+        bottom: 2rem;
+        left: 6vw;
+    }
+
+    .hud-br {
+        bottom: 2rem;
+        right: 6vw;
+    }
+
+    .hud-corner {
+        font-size: 0.7rem;
+    }
+
+    .line-top {
+        top: 1.5rem;
+        left: 6vw;
+        right: 6vw;
+    }
+
+    .line-bottom {
+        bottom: 1.5rem;
+        left: 6vw;
+        right: 6vw;
+    }
+
+    .line-left {
+        top: 2.5rem;
+        bottom: 2.5rem;
+        left: 4vw;
+    }
+
+    .line-right {
+        top: 2.5rem;
+        bottom: 2.5rem;
+        right: 4vw;
+    }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
     .hud-overlay {
         padding: 1.5rem 6vw;
     }
@@ -158,6 +218,20 @@
         right: 6vw;
     }
 
+    .hud-corner {
+        font-size: 0.65rem;
+        gap: 0.5rem;
+    }
+
+    .hud-label {
+        font-size: 0.6rem;
+    }
+
+    .hud-indicator {
+        width: 5px;
+        height: 5px;
+    }
+
     .line-top {
         top: 1rem;
         left: 4vw;
@@ -172,6 +246,22 @@
 
     .line-left,
     .line-right {
+        display: none;
+    }
+}
+
+/* Extra small mobile: < 375px */
+@media (max-width: 374px) {
+    .hud-corner {
+        font-size: 0.6rem;
+    }
+
+    .hud-label {
+        font-size: 0.55rem;
+    }
+
+    /* Hide bottom-right on very small screens to prevent clutter */
+    .hud-br {
         display: none;
     }
 }

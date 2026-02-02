@@ -39,3 +39,36 @@
     text-shadow: 0 0 5px rgba(248, 59, 40, 0.5);
     /* Subtle bloom */
 }
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Tablet: 768px - 900px */
+@media (max-width: 900px) and (min-width: 768px) {
+    .ascii-content {
+        font-size: 7px;
+        line-height: 7px;
+    }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+    .ascii-content {
+        font-size: 6px;
+        line-height: 6px;
+        opacity: 0.5;
+    }
+
+    .ascii-content:hover {
+        opacity: 0.8;
+    }
+}
+
+/* Extra small mobile: < 375px */
+@media (max-width: 374px) {
+    .ascii-content {
+        font-size: 5px;
+        line-height: 5px;
+    }
+}

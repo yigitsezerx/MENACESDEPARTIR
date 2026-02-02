@@ -65,3 +65,26 @@ button {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-primary);
 }
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    /* Narrower scrollbar on mobile */
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    /* Ensure touch targets are large enough */
+    button,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
